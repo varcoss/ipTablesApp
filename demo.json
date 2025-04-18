@@ -1,0 +1,42 @@
+[
+  {
+    "num": "1",
+    "chain": "INPUT",
+    "action": "ACCEPT",
+    "protocol": "tcp",
+    "source": "0.0.0.0/0",
+    "destination": "0.0.0.0/0",
+    "port": "22",
+    "comment": "Allow SSH"
+  },
+  {
+    "num": "2",
+    "chain": "INPUT",
+    "action": "ACCEPT",
+    "protocol": "tcp",
+    "source": "0.0.0.0/0",
+    "destination": "0.0.0.0/0",
+    "port": "80",
+    "comment": "Allow HTTP"
+  },
+  {
+    "num": "3",
+    "chain": "INPUT",
+    "action": "DROP",
+    "protocol": "tcp",
+    "source": "192.168.1.100",
+    "destination": "0.0.0.0/0",
+    "port": "23",
+    "comment": "Block Telnet from specific IP"
+  },
+  {
+    "num": "4",
+    "chain": "OUTPUT",
+    "action": "ACCEPT",
+    "protocol": "udp",
+    "source": "0.0.0.0/0",
+    "destination": "8.8.8.8",
+    "port": "53",
+    "comment": "Allow DNS queries to Google DNS"
+  }
+]
